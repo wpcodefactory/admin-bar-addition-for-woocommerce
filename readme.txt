@@ -93,6 +93,8 @@ Admin bar addition for WooCommerce.
 = 1.2.0 - 11/11/2022 =
 * Tested up to: 6.1.
 * WC tested up to: 7.1.
+* Readme.txt updated.
+* Deploy script added.
 
 = 1.1.0 - 03/01/2020 =
 * Dev - Items updated.
