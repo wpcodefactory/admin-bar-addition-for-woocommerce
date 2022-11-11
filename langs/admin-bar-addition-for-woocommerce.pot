@@ -1,0 +1,235 @@
+#: includes/class-alg-wc-admin-bar-addition-core.php:73
+msgid "Sales by date"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:74
+msgid "Sales by product"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:75
+msgid "Sales by category"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:76
+msgid "Coupons by date"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:84
+msgid "Last 7 days"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:88
+msgid "This month"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:92
+msgid "Last month"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:96
+msgid "Year"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:119
+msgid "WooCommerce"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:122
+msgid "WooCommerce settings"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:126
+#: includes/class-alg-wc-admin-bar-addition-core.php:130
+#: includes/class-alg-wc-admin-bar-addition-core.php:148
+msgid "Orders"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:134
+msgid "Add order"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:138
+#: includes/class-alg-wc-admin-bar-addition-core.php:153
+msgid "Customers"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:144
+msgid "Reports"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:157
+msgid "Customers vs. guests"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:161
+msgid "Customer list"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:167
+msgid "Stock"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:171
+msgid "Low in stock"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:175
+msgid "Out of stock"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:179
+msgid "Most Stocked"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:185
+msgid "Taxes"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:189
+msgid "Taxes by code"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:193
+msgid "Taxes by date"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:201
+#: includes/class-alg-wc-admin-bar-addition-core.php:205
+#: includes/class-alg-wc-admin-bar-addition-core.php:249
+msgid "Products"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:209
+msgid "Add product"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:213
+msgid "Categories"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:217
+msgid "Tags"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:221
+msgid "Attributes"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:227
+#: includes/class-alg-wc-admin-bar-addition-core.php:231
+msgid "Coupons"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:235
+msgid "Add coupon"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:241
+msgid "Settings"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:245
+#: includes/class-alg-wc-admin-bar-addition-core.php:253
+msgid "General"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:257
+msgid "Inventory"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:261
+msgid "Downloadable products"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:267
+msgid "Tax"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:271
+msgid "Tax options"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:275
+msgid "Standard rates"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:281
+msgid "Shipping"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:285
+msgid "Shipping zones"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:289
+msgid "Shipping options"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:293
+msgid "Shipping classes"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:299
+msgid "Payments"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:303
+msgid "Checkout options"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:307
+msgid "BACS"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:311
+msgid "Check payments"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:315
+msgid "Cash on delivery"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:319
+msgid "PayPal"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:325
+msgid "Account"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:329
+msgid "Emails"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:333
+msgid "Advanced"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:337
+msgid "Page setup"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:341
+msgid "REST API"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:345
+msgid "Webhooks"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:353
+#: includes/class-alg-wc-admin-bar-addition-core.php:357
+msgid "System status"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:361
+msgid "Tools"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:365
+msgid "Logs"
+msgstr ""
+
+#: includes/class-alg-wc-admin-bar-addition-core.php:371
+msgid "Extensions"
+msgstr ""
