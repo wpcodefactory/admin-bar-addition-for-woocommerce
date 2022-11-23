@@ -3,7 +3,7 @@ Contributors: wpcodefactory, algoritmika, anbinder
 Tags: woocommerce, admin bar addition, adminbar, admin bar
 Requires at least: 4.4
 Tested up to: 6.1
-Stable tag: 1.1.0
+Stable tag: 1.2.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -13,7 +13,7 @@ Admin bar addition for WooCommerce.
 
 Admin bar addition for WooCommerce.
 
-= Items =
+### &#9989; Items ###
 
 * Orders
     * Orders
@@ -75,7 +75,7 @@ Admin bar addition for WooCommerce.
     * Logs
 * Extensions
 
-= Feedback =
+### &#128472; Feedback ###
 
 * We are open to your suggestions and feedback. Thank you for using or trying out one of our plugins!
 
@@ -90,7 +90,10 @@ Admin bar addition for WooCommerce.
 
 == Changelog ==
 
-= 1.2.0 - 11/11/2022 =
+= 1.2.0 - 23/11/2022 =
+* Dev - The plugin is initialized on the `plugins_loaded` action now.
+* Dev - Localisation - The `load_plugin_textdomain()` function moved to the `init` action.
+* Dev - Code refactoring.
 * Tested up to: 6.1.
 * WC tested up to: 7.1.
 * Readme.txt updated.

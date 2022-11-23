@@ -4,10 +4,11 @@
  *
  * @version 1.1.0
  * @since   1.0.0
+ *
  * @author  Algoritmika Ltd.
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+defined( 'ABSPATH' ) || exit;
 
 if ( ! class_exists( 'Alg_WC_Admin_Bar_Addition_Core' ) ) :
 
@@ -107,11 +108,13 @@ class Alg_WC_Admin_Bar_Addition_Core {
 	 *
 	 * @version 1.1.0
 	 * @since   1.0.0
-	 * @todo    [dev] (maybe) reports > customers > customers > add dates
-	 * @todo    [dev] (maybe) reports > taxes > taxes_by_code > add dates
-	 * @todo    [dev] (maybe) reports > taxes > taxes_by_date > add dates
-	 * @todo    [dev] (maybe) settings > add custom sections (i.e. Booster and other plugins)
-	 * @todo    [dev] (maybe) extensions > add sections
+	 *
+	 * @todo    [next] (dev) analytics
+	 * @todo    [maybe] (dev) reports > customers > customers > add dates
+	 * @todo    [maybe] (dev) reports > taxes > taxes_by_code > add dates
+	 * @todo    [maybe] (dev) reports > taxes > taxes_by_date > add dates
+	 * @todo    [maybe] (dev) settings > add custom sections
+	 * @todo    [maybe] (dev) extensions > add sections
 	 */
 	function add_woocommerce_admin_bar( $wp_admin_bar ) {
 		$nodes = array(
