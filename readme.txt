@@ -90,6 +90,9 @@ Admin bar addition for WooCommerce.
 
 == Changelog ==
 
+= 1.3.0 - 05/07/2023 =
+* Fix - Add support for WooCommmerce High Performance Order Storage (HPOS).
+
 = 1.2.0 - 23/11/2022 =
 * Dev - The plugin is initialized on the `plugins_loaded` action now.
 * Dev - Localisation - The `load_plugin_textdomain()` function moved to the `init` action.

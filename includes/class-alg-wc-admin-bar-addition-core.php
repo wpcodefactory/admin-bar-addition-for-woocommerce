@@ -2,7 +2,7 @@
 /**
  * Admin Bar Addition for WooCommerce - Core Class
  *
- * @version 1.1.0
+ * @version 1.3.0
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -24,6 +24,9 @@ class Alg_WC_Admin_Bar_Addition_Core {
 		add_action( 'admin_bar_menu', array( $this, 'add_woocommerce_admin_bar' ), PHP_INT_MAX );
 		add_action( 'wp_head',        array( $this, 'add_woocommerce_admin_bar_icon_style' ) );
 		add_action( 'admin_head',     array( $this, 'add_woocommerce_admin_bar_icon_style' ) );
+
+		// Declare HPOS compatibility.
+		add_action( 'before_woocommerce_init', array( $this, 'declare_hpos_compatibility' ) );
 	}
 
 	/**
@@ -117,6 +120,17 @@ class Alg_WC_Admin_Bar_Addition_Core {
 	 * @todo    [maybe] (dev) extensions > add sections
 	 */
 	function add_woocommerce_admin_bar( $wp_admin_bar ) {
+
+		if ( class_exists( 'Automattic\WooCommerce\Utilities\OrderUtil' ) && Automattic\WooCommerce\Utilities\OrderUtil::custom_orders_table_usage_is_enabled() ) {
+			// HPOS usage is enabled.
+			$edit_orders_url = 'admin.php?page=wc-orders';
+			$new_order_url   = 'admin.php?page=wc-orders&action=new';
+		} else {
+			// Traditional CPT-based orders are in use.
+			$edit_orders_url = 'edit.php?post_type=shop_order';
+			$new_order_url   = 'post-new.php?post_type=shop_order';
+		}
+
 		$nodes = array(
 			'alg-wc' => array(
 				'title'  => '<span class="ab-icon"></span>' . __( 'WooCommerce', 'woocommerce' ),
@@ -127,15 +141,15 @@ class Alg_WC_Admin_Bar_Addition_Core {
 				'nodes'  => array(
 					'orders' => array(
 						'title'  => __( 'Orders', 'woocommerce' ),
-						'href'   => admin_url( 'edit.php?post_type=shop_order' ),
+						'href'   => admin_url( $edit_orders_url ),
 						'nodes'  => array(
 							'orders' => array(
 								'title'  => __( 'Orders', 'woocommerce' ),
-								'href'   => admin_url( 'edit.php?post_type=shop_order' ),
+								'href'   => admin_url( $edit_orders_url ),
 							),
 							'add-order' => array(
 								'title'  => __( 'Add order', 'woocommerce' ),
-								'href'   => admin_url( 'post-new.php?post_type=shop_order' ),
+								'href'   => admin_url( $new_order_url ),
 							),
 							'customers' => array(
 								'title'  => __( 'Customers', 'woocommerce' ),
@@ -378,6 +392,20 @@ class Alg_WC_Admin_Bar_Addition_Core {
 			),
 		);
 		$this->add_woocommerce_admin_bar_nodes( $wp_admin_bar, $nodes, false );
+	}
+
+	/**
+	 * Declare HPOS (Custom Order tables) compatibility.
+	 *
+	 * @since 1.3.0
+	 */
+	public function declare_hpos_compatibility() {
+
+		if ( ! class_exists( 'Automattic\WooCommerce\Utilities\FeaturesUtil' ) ) {
+			return;
+		}
+
+		\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', plugin_basename( ALG_WC_ADMIN_BAR_ADDITION_FILE ), true );
 	}
 
 }
