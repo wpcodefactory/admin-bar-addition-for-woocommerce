@@ -1,9 +1,9 @@
 === Admin Bar Addition for WooCommerce ===
-Contributors: wpcodefactory, algoritmika, anbinder
+Contributors: wpcodefactory, algoritmika, anbinder, karzin, omardabbas, kousikmukherjeeli
 Tags: woocommerce, admin bar addition, adminbar, admin bar
 Requires at least: 4.4
-Tested up to: 6.1
-Stable tag: 1.2.0
+Tested up to: 6.2
+Stable tag: 1.3.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -11,7 +11,7 @@ Admin bar addition for WooCommerce.
 
 == Description ==
 
-Admin bar addition for WooCommerce.
+**Admin Bar Addition for WooCommerce** is a lightweight plugin that adds useful WooCommerce links to the admin bar.
 
 ### &#9989; Items ###
 
@@ -89,6 +89,11 @@ Admin bar addition for WooCommerce.
 1. Admin bar addition for WooCommerce.
 
 == Changelog ==
+
+= 1.3.0 - 06/07/2023 =
+* Dev – "High-Performance Order Storage (HPOS)" compatibility.
+* Tested up to: 6.2.
+* WC tested up to: 7.8.
 
 = 1.2.0 - 23/11/2022 =
 * Dev - The plugin is initialized on the `plugins_loaded` action now.

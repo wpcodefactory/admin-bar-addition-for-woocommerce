@@ -2,7 +2,7 @@
 /**
  * Admin Bar Addition for WooCommerce - Core Class
  *
- * @version 1.1.0
+ * @version 1.3.0
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -106,7 +106,7 @@ class Alg_WC_Admin_Bar_Addition_Core {
 	/**
 	 * add_woocommerce_admin_bar.
 	 *
-	 * @version 1.1.0
+	 * @version 1.3.0
 	 * @since   1.0.0
 	 *
 	 * @todo    [next] (dev) analytics
@@ -117,6 +117,12 @@ class Alg_WC_Admin_Bar_Addition_Core {
 	 * @todo    [maybe] (dev) extensions > add sections
 	 */
 	function add_woocommerce_admin_bar( $wp_admin_bar ) {
+
+		$is_hpos = (
+			class_exists( 'Automattic\WooCommerce\Utilities\OrderUtil' ) &&
+			Automattic\WooCommerce\Utilities\OrderUtil::custom_orders_table_usage_is_enabled()
+		);
+
 		$nodes = array(
 			'alg-wc' => array(
 				'title'  => '<span class="ab-icon"></span>' . __( 'WooCommerce', 'woocommerce' ),
@@ -127,15 +133,15 @@ class Alg_WC_Admin_Bar_Addition_Core {
 				'nodes'  => array(
 					'orders' => array(
 						'title'  => __( 'Orders', 'woocommerce' ),
-						'href'   => admin_url( 'edit.php?post_type=shop_order' ),
+						'href'   => admin_url( ( $is_hpos ? 'admin.php?page=wc-orders' : 'edit.php?post_type=shop_order' ) ),
 						'nodes'  => array(
 							'orders' => array(
 								'title'  => __( 'Orders', 'woocommerce' ),
-								'href'   => admin_url( 'edit.php?post_type=shop_order' ),
+								'href'   => admin_url( ( $is_hpos ? 'admin.php?page=wc-orders' : 'edit.php?post_type=shop_order' ) ),
 							),
 							'add-order' => array(
 								'title'  => __( 'Add order', 'woocommerce' ),
-								'href'   => admin_url( 'post-new.php?post_type=shop_order' ),
+								'href'   => admin_url( ( $is_hpos ? 'admin.php?page=wc-orders&action=new' : 'post-new.php?post_type=shop_order' ) ),
 							),
 							'customers' => array(
 								'title'  => __( 'Customers', 'woocommerce' ),
@@ -377,7 +383,9 @@ class Alg_WC_Admin_Bar_Addition_Core {
 				),
 			),
 		);
+
 		$this->add_woocommerce_admin_bar_nodes( $wp_admin_bar, $nodes, false );
+
 	}
 
 }
