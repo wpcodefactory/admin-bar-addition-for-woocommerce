@@ -29,6 +29,14 @@ final class Alg_WC_Admin_Bar_Addition {
 	protected static $_instance = null;
 
 	/**
+	 * Core class
+	 * @var Alg_WC_Admin_Bar_Addition_Core
+	 * 
+	 * @since 1.4.0
+	 */
+	public $core = null;
+	
+	/**
 	 * Main Alg_WC_Admin_Bar_Addition Instance
 	 *
 	 * Ensures only one instance of Alg_WC_Admin_Bar_Addition is loaded or can be loaded.
