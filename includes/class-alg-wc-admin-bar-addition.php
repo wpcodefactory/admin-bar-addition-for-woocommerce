@@ -2,7 +2,7 @@
 /**
  * Admin Bar Addition for WooCommerce - Main Class
  *
- * @version 1.3.0
+ * @version 1.4.0
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -21,6 +21,14 @@ final class Alg_WC_Admin_Bar_Addition {
 	 * @since 1.0.0
 	 */
 	public $version = ALG_WC_ADMIN_BAR_ADDITION_VERSION;
+
+	/**
+	 * core.
+	 *
+	 * @version 1.4.0
+	 * @since   1.4.0
+	 */
+	public $core;
 
 	/**
 	 * @var   Alg_WC_Admin_Bar_Addition The single instance of the class

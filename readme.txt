@@ -2,8 +2,8 @@
 Contributors: wpcodefactory, algoritmika, anbinder, karzin, omardabbas, kousikmukherjeeli
 Tags: woocommerce, admin bar addition, adminbar, admin bar
 Requires at least: 4.4
-Tested up to: 6.2
-Stable tag: 1.3.0
+Tested up to: 6.4
+Stable tag: 1.4.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -79,6 +79,10 @@ Admin bar addition for WooCommerce.
 
 * We are open to your suggestions and feedback. Thank you for using or trying out one of our plugins!
 
+### &#8505; More ###
+
+* The plugin is **"High-Performance Order Storage (HPOS)"** compatible.
+
 == Installation ==
 
 1. Upload the entire plugin folder to the `/wp-content/plugins/` directory.
@@ -89,6 +93,11 @@ Admin bar addition for WooCommerce.
 1. Admin bar addition for WooCommerce.
 
 == Changelog ==
+
+= 1.4.0 - 02/04/2024 =
+* Dev - PHP 8.2 compatibility - "Creation of dynamic property is deprecated" notice fixed.
+* Tested up to: 6.4.
+* WC tested up to: 8.7.
 
 = 1.3.0 - 06/07/2023 =
 * Dev – "High-Performance Order Storage (HPOS)" compatibility.
