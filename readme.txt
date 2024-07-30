@@ -2,8 +2,8 @@
 Contributors: wpcodefactory, algoritmika, anbinder, karzin, omardabbas, kousikmukherjeeli
 Tags: woocommerce, admin bar addition, adminbar, admin bar
 Requires at least: 4.4
-Tested up to: 6.4
-Stable tag: 1.4.0
+Tested up to: 6.5
+Stable tag: 1.4.1
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -93,6 +93,10 @@ Admin bar addition for WooCommerce.
 1. Admin bar addition for WooCommerce.
 
 == Changelog ==
+
+= 1.4.1 - 30/07/2024 =
+* WC tested up to: 9.1.
+* Tested up to: 6.5.
 
 = 1.4.0 - 02/04/2024 =
 * Dev - PHP 8.2 compatibility - "Creation of dynamic property is deprecated" notice fixed.
