@@ -2,143 +2,151 @@
 /**
  * Admin Bar Addition for WooCommerce - Main Class
  *
- * @version 1.4.0
+ * @version 1.4.3
  * @since   1.0.0
  *
- * @author  Algoritmika Ltd.
+ * @author WPFactory
+ *
+ * @package WPFactory\WC_Admin_Bar_Addition
  */
 
 defined( 'ABSPATH' ) || exit;
 
 if ( ! class_exists( 'Alg_WC_Admin_Bar_Addition' ) ) :
 
-final class Alg_WC_Admin_Bar_Addition {
-
 	/**
-	 * Plugin version.
+	 * Alg_WC_Admin_Bar_Addition class.
 	 *
-	 * @var   string
-	 * @since 1.0.0
-	 */
-	public $version = ALG_WC_ADMIN_BAR_ADDITION_VERSION;
-
-	/**
-	 * core.
-	 *
-	 * @version 1.4.0
-	 * @since   1.4.0
-	 */
-	public $core;
-
-	/**
-	 * @var   Alg_WC_Admin_Bar_Addition The single instance of the class
-	 * @since 1.0.0
-	 */
-	protected static $_instance = null;
-
-	/**
-	 * Main Alg_WC_Admin_Bar_Addition Instance
-	 *
-	 * Ensures only one instance of Alg_WC_Admin_Bar_Addition is loaded or can be loaded.
-	 *
-	 * @version 1.0.0
+	 * @version 1.4.3
 	 * @since   1.0.0
-	 *
-	 * @static
-	 * @return  Alg_WC_Admin_Bar_Addition - Main instance
 	 */
-	public static function instance() {
-		if ( is_null( self::$_instance ) ) {
-			self::$_instance = new self();
+	final class Alg_WC_Admin_Bar_Addition {
+
+		/**
+		 * Plugin version.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @var string
+		 */
+		public $version = ALG_WC_ADMIN_BAR_ADDITION_VERSION;
+
+		/**
+		 * Core.
+		 *
+		 * @version 1.4.0
+		 * @since   1.4.0
+		 *
+		 * @var Alg_WC_Admin_Bar_Addition_Core
+		 */
+		public $core;
+
+		/**
+		 * The single instance of the class.
+		 *
+		 * @version 1.4.3
+		 * @since   1.0.0
+		 *
+		 * @var Alg_WC_Admin_Bar_Addition
+		 */
+		protected static $instance = null;
+
+		/**
+		 * Main Alg_WC_Admin_Bar_Addition Instance.
+		 *
+		 * Ensures only one instance of Alg_WC_Admin_Bar_Addition is loaded or can be loaded.
+		 *
+		 * @version 1.4.3
+		 * @since   1.0.0
+		 *
+		 * @static
+		 *
+		 * @return Alg_WC_Admin_Bar_Addition
+		 */
+		public static function instance() {
+			if ( is_null( self::$instance ) ) {
+				self::$instance = new self();
+			}
+			return self::$instance;
 		}
-		return self::$_instance;
-	}
 
-	/**
-	 * Alg_WC_Admin_Bar_Addition Constructor.
-	 *
-	 * @version 1.3.0
-	 * @since   1.0.0
-	 *
-	 * @access  public
-	 */
-	function __construct() {
+		/**
+		 * Alg_WC_Admin_Bar_Addition Constructor.
+		 *
+		 * @version 1.4.3
+		 * @since   1.0.0
+		 *
+		 * @access public
+		 */
+		public function __construct() {
+			// Check for the active WooCommerce plugin.
+			if ( ! function_exists( 'WC' ) ) {
+				return;
+			}
 
-		// Check for the active WooCommerce plugin
-		if ( ! function_exists( 'WC' ) ) {
-			return;
+			// Declare compatibility with custom order tables for WooCommerce.
+			add_action( 'before_woocommerce_init', array( $this, 'wc_declare_compatibility' ) );
+
+			// Include required files.
+			$this->includes();
 		}
 
-		// Set up localisation
-		add_action( 'init', array( $this, 'localize' ) );
+		/**
+		 * WC declare compatibility.
+		 *
+		 * @version 1.3.0
+		 * @since   1.3.0
+		 *
+		 * @return void
+		 *
+		 * @see https://developer.woocommerce.com/docs/features/orders/high-performance-order-storage/recipe-book/
+		 */
+		public function wc_declare_compatibility() {
+			if ( class_exists( '\Automattic\WooCommerce\Utilities\FeaturesUtil' ) ) {
+				\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility(
+					'custom_order_tables',
+					ALG_WC_ADMIN_BAR_ADDITION_FILE,
+					true
+				);
+			}
+		}
 
-		// Declare compatibility with custom order tables for WooCommerce
-		add_action( 'before_woocommerce_init', array( $this, 'wc_declare_compatibility' ) );
+		/**
+		 * Include required core files used in admin and on the frontend.
+		 *
+		 * @version 1.4.3
+		 * @since   1.0.0
+		 *
+		 * @return void
+		 */
+		public function includes() {
+			// Core.
+			$this->core = require_once plugin_dir_path( __FILE__ ) . 'class-alg-wc-admin-bar-addition-core.php';
+		}
 
-		// Include required files
-		$this->includes();
+		/**
+		 * Get the plugin URL.
+		 *
+		 * @version 1.2.0
+		 * @since   1.0.0
+		 *
+		 * @return string
+		 */
+		public function plugin_url() {
+			return untrailingslashit( plugin_dir_url( ALG_WC_ADMIN_BAR_ADDITION_FILE ) );
+		}
 
-	}
-
-	/**
-	 * localize.
-	 *
-	 * @version 1.2.0
-	 * @since   1.2.0
-	 */
-	function localize() {
-		load_plugin_textdomain( 'admin-bar-addition-for-woocommerce', false, dirname( plugin_basename( ALG_WC_ADMIN_BAR_ADDITION_FILE ) ) . '/langs/' );
-	}
-
-	/**
-	 * wc_declare_compatibility.
-	 *
-	 * @version 1.3.0
-	 * @since   1.3.0
-	 *
-	 * @see     https://github.com/woocommerce/woocommerce/wiki/High-Performance-Order-Storage-Upgrade-Recipe-Book#declaring-extension-incompatibility
-	 */
-	function wc_declare_compatibility() {
-		if ( class_exists( '\Automattic\WooCommerce\Utilities\FeaturesUtil' ) ) {
-			\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', ALG_WC_ADMIN_BAR_ADDITION_FILE, true );
+		/**
+		 * Get the plugin path.
+		 *
+		 * @version 1.2.0
+		 * @since   1.0.0
+		 *
+		 * @return string
+		 */
+		public function plugin_path() {
+			return untrailingslashit( plugin_dir_path( ALG_WC_ADMIN_BAR_ADDITION_FILE ) );
 		}
 	}
-
-	/**
-	 * Include required core files used in admin and on the frontend.
-	 *
-	 * @version 1.2.0
-	 * @since   1.0.0
-	 */
-	function includes() {
-		// Core
-		$this->core = require_once( 'class-alg-wc-admin-bar-addition-core.php' );
-	}
-
-	/**
-	 * Get the plugin url.
-	 *
-	 * @version 1.2.0
-	 * @since   1.0.0
-	 *
-	 * @return  string
-	 */
-	function plugin_url() {
-		return untrailingslashit( plugin_dir_url( ALG_WC_ADMIN_BAR_ADDITION_FILE ) );
-	}
-
-	/**
-	 * Get the plugin path.
-	 *
-	 * @version 1.2.0
-	 * @since   1.0.0
-	 *
-	 * @return  string
-	 */
-	function plugin_path() {
-		return untrailingslashit( plugin_dir_path( ALG_WC_ADMIN_BAR_ADDITION_FILE ) );
-	}
-
-}
 
 endif;

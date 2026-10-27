@@ -1,24 +1,41 @@
 <?php
-/*
-Plugin Name: Admin Bar Addition for WooCommerce
-Plugin URI: https://wpfactory.com
-Description: Admin bar addition for WooCommerce.
-Version: 1.4.2
-Author: WPFactory
-Author URI: https://wpfactory.com
-Text Domain: admin-bar-addition-for-woocommerce
-Domain Path: /langs
-WC tested up to: 10.1
-Requires Plugins: woocommerce
-*/
+/**
+ * Plugin Name: Admin Bar Addition for WooCommerce
+ * Plugin URI: https://wpfactory.com
+ * Description: Admin bar addition for WooCommerce.
+ * Version: 1.4.3-dev
+ * Author: WPFactory
+ * Author URI: https://wpfactory.com
+ * Requires PHP: 7.4
+ * Text Domain: admin-bar-addition-for-woocommerce
+ * Domain Path: /langs
+ * WC tested up to: 11.2
+ * Requires Plugins: woocommerce
+ * License: GNU General Public License v3.0
+ * License URI: http://www.gnu.org/licenses/gpl-3.0.html
+ *
+ * @package WPFactory\WC_Admin_Bar_Addition
+ */
 
 defined( 'ABSPATH' ) || exit;
 
-defined( 'ALG_WC_ADMIN_BAR_ADDITION_VERSION' ) || define( 'ALG_WC_ADMIN_BAR_ADDITION_VERSION', '1.4.2' );
+/**
+ * Plugin version.
+ */
+defined( 'ALG_WC_ADMIN_BAR_ADDITION_VERSION' ) || define( 'ALG_WC_ADMIN_BAR_ADDITION_VERSION', '1.4.3-dev-20261027-2225' );
 
+/**
+ * Plugin file.
+ */
 defined( 'ALG_WC_ADMIN_BAR_ADDITION_FILE' ) || define( 'ALG_WC_ADMIN_BAR_ADDITION_FILE', __FILE__ );
 
-require_once( 'includes/class-alg-wc-admin-bar-addition.php' );
+/**
+ * Include main class.
+ *
+ * @version 1.4.3
+ * @since   1.0.0
+ */
+require_once plugin_dir_path( __FILE__ ) . 'includes/class-alg-wc-admin-bar-addition.php';
 
 if ( ! function_exists( 'alg_wc_admin_bar_addition' ) ) {
 	/**
@@ -26,10 +43,15 @@ if ( ! function_exists( 'alg_wc_admin_bar_addition' ) ) {
 	 *
 	 * @version 1.0.0
 	 * @since   1.0.0
+	 *
+	 * @return Alg_WC_Admin_Bar_Addition
 	 */
 	function alg_wc_admin_bar_addition() {
 		return Alg_WC_Admin_Bar_Addition::instance();
 	}
 }
 
+/**
+ * Initialize the plugin.
+ */
 add_action( 'plugins_loaded', 'alg_wc_admin_bar_addition' );
