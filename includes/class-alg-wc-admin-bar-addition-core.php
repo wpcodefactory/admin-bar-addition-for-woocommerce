@@ -2,7 +2,7 @@
 /**
  * Admin Bar Addition for WooCommerce - Core Class
  *
- * @version 1.4.3
+ * @version 1.5.0
  * @since   1.0.0
  *
  * @author WPFactory
@@ -17,7 +17,7 @@ if ( ! class_exists( 'Alg_WC_Admin_Bar_Addition_Core' ) ) :
 	/**
 	 * Alg_WC_Admin_Bar_Addition_Core class.
 	 *
-	 * @version 1.4.3
+	 * @version 1.5.0
 	 * @since   1.0.0
 	 */
 	class Alg_WC_Admin_Bar_Addition_Core {
@@ -25,7 +25,7 @@ if ( ! class_exists( 'Alg_WC_Admin_Bar_Addition_Core' ) ) :
 		/**
 		 * Constructor.
 		 *
-		 * @version 1.4.3
+		 * @version 1.5.0
 		 * @since   1.0.0
 		 */
 		public function __construct() {
@@ -48,7 +48,7 @@ if ( ! class_exists( 'Alg_WC_Admin_Bar_Addition_Core' ) ) :
 		/**
 		 * Add WooCommerce admin bar icon style.
 		 *
-		 * @version 1.4.3
+		 * @version 1.5.0
 		 * @since   1.0.0
 		 *
 		 * @return void
@@ -114,7 +114,7 @@ if ( ! class_exists( 'Alg_WC_Admin_Bar_Addition_Core' ) ) :
 		 * @version 1.0.0
 		 * @since   1.0.0
 		 *
-		 * @return array The nodes for orders reports.
+		 * @return array The nodes for order reports.
 		 */
 		public function get_nodes_orders_reports() {
 			$nodes = array();

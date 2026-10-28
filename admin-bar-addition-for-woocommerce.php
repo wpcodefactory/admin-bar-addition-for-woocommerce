@@ -3,7 +3,7 @@
  * Plugin Name: Admin Bar Addition for WooCommerce
  * Plugin URI: https://wpfactory.com
  * Description: Admin bar addition for WooCommerce.
- * Version: 1.4.3-dev
+ * Version: 1.5.0
  * Author: WPFactory
  * Author URI: https://wpfactory.com
  * Requires PHP: 7.4
@@ -22,7 +22,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Plugin version.
  */
-defined( 'ALG_WC_ADMIN_BAR_ADDITION_VERSION' ) || define( 'ALG_WC_ADMIN_BAR_ADDITION_VERSION', '1.4.3-dev-20261027-2225' );
+defined( 'ALG_WC_ADMIN_BAR_ADDITION_VERSION' ) || define( 'ALG_WC_ADMIN_BAR_ADDITION_VERSION', '1.5.0' );
 
 /**
  * Plugin file.
@@ -32,7 +32,7 @@ defined( 'ALG_WC_ADMIN_BAR_ADDITION_FILE' ) || define( 'ALG_WC_ADMIN_BAR_ADDITIO
 /**
  * Include main class.
  *
- * @version 1.4.3
+ * @version 1.5.0
  * @since   1.0.0
  */
 require_once plugin_dir_path( __FILE__ ) . 'includes/class-alg-wc-admin-bar-addition.php';

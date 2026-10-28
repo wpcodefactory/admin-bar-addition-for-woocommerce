@@ -2,7 +2,7 @@
 /**
  * Admin Bar Addition for WooCommerce - Main Class
  *
- * @version 1.4.3
+ * @version 1.5.0
  * @since   1.0.0
  *
  * @author WPFactory
@@ -17,7 +17,7 @@ if ( ! class_exists( 'Alg_WC_Admin_Bar_Addition' ) ) :
 	/**
 	 * Alg_WC_Admin_Bar_Addition class.
 	 *
-	 * @version 1.4.3
+	 * @version 1.5.0
 	 * @since   1.0.0
 	 */
 	final class Alg_WC_Admin_Bar_Addition {
@@ -44,7 +44,7 @@ if ( ! class_exists( 'Alg_WC_Admin_Bar_Addition' ) ) :
 		/**
 		 * The single instance of the class.
 		 *
-		 * @version 1.4.3
+		 * @version 1.5.0
 		 * @since   1.0.0
 		 *
 		 * @var Alg_WC_Admin_Bar_Addition
@@ -56,7 +56,7 @@ if ( ! class_exists( 'Alg_WC_Admin_Bar_Addition' ) ) :
 		 *
 		 * Ensures only one instance of Alg_WC_Admin_Bar_Addition is loaded or can be loaded.
 		 *
-		 * @version 1.4.3
+		 * @version 1.5.0
 		 * @since   1.0.0
 		 *
 		 * @static
@@ -73,7 +73,7 @@ if ( ! class_exists( 'Alg_WC_Admin_Bar_Addition' ) ) :
 		/**
 		 * Alg_WC_Admin_Bar_Addition Constructor.
 		 *
-		 * @version 1.4.3
+		 * @version 1.5.0
 		 * @since   1.0.0
 		 *
 		 * @access public
@@ -114,7 +114,7 @@ if ( ! class_exists( 'Alg_WC_Admin_Bar_Addition' ) ) :
 		/**
 		 * Include required core files used in admin and on the frontend.
 		 *
-		 * @version 1.4.3
+		 * @version 1.5.0
 		 * @since   1.0.0
 		 *
 		 * @return void
